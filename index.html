@@ -2,79 +2,140 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Formulário de Cadastro</title>
+  <title>HQ Trote Futurista</title>
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'VT323', monospace;
+      background: linear-gradient(45deg, #ff00ff, #00ffff, #ffff00);
+      background-size: 400% 400%;
+      animation: fundo 10s ease infinite;
+      color: #000;
+      text-align: center;
+      cursor: url('https://cur.cursors-4u.net/cursors/cur-2/cur116.cur'), auto;
+    }
+    @keyframes fundo {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+    header {
+      padding: 20px;
+      background: black;
+      color: #ff00ff;
+      font-size: 40px;
+      text-shadow: 2px 2px 10px #00ffff;
+      border-bottom: 5px dashed #ff00ff;
+    }
+    nav {
+      margin: 15px 0;
+    }
+    nav a {
+      text-decoration: none;
+      color: #fff;
+      background: #ff00ff;
+      padding: 10px 20px;
+      margin: 5px;
+      border: 3px solid #000;
+      font-size: 20px;
+      box-shadow: 0px 0px 10px #00ffff;
+      transition: 0.2s;
+      cursor: pointer;
+    }
+    nav a:hover {
+      background: #00ffff;
+      color: #000;
+      box-shadow: 0px 0px 15px #ff00ff;
+    }
+    .content {
+      padding: 20px;
+      margin: 20px auto;
+      width: 80%;
+      background: rgba(255,255,255,0.8);
+      border: 4px dotted #000;
+    }
+    footer {
+      margin-top: auto;
+      padding: 15px;
+      font-size: 14px;
+      background: black;
+      color: #fff;
+      border-top: 5px dashed #00ffff;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <img src="pikachuskin.png" alt="Meu Lindo Site" width="200" height="80">
-  </header>
+  <header>★ Trote Futurista ★</header>
 
-  <main>
-    <h1>Cadastro</h1>
+  <nav>
+    <a onclick="mostrarCapitulo('enredo')">Enredo</a>
+    <a onclick="mostrarCapitulo(1)">Capítulo 1</a>
+    <a onclick="mostrarCapitulo(2)">Capítulo 2</a>
+    <a onclick="mostrarCapitulo(3)">Capítulo 3</a>
+    <a onclick="mostrarCapitulo('quemSomos')">Quem somos</a>
+  </nav>
 
-    <form action="cadastro/" method="post">
+  <div class="content" id="conteudo">
+    <h2>Capítulo 1</h2>
+    <p>Olá, seja bem-vind@ para 2007!</p>
+    <p>Aqui começamos uma longa jornada de aventuras!</p>
+    <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExcTNxMGtlZmQ5eTBmaTEyMDNqYWxhejVjOHJ5ZDg4bDV0bnkxZ2VoYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3GmyBW4esV71rNCnzU/giphy.gif" width="150" alt="gif cena">
+  </div>
+
+  <footer>© 2025 | Trote Futurista ✦</footer>
+
+  <script>
+    function mostrarCapitulo(cap) {
+      const conteudo = document.getElementById('conteudo');
+      if (cap === 1) {
+        conteudo.innerHTML = `
+          <h2>Capítulo 1</h2>
+          <p>Olá, seja bem-vind@ para 2007!</p>
+          <p>Aqui começamos uma longa jornada de aventuras!</p>
+          <img src="https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3b3BqZzdjdGpuaXFmdm80cDUxNmEyeGxkMTdyZ3l0dHRnYmJtbG5meiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/yNnVpD7C3X9djBK911/giphy.gif" width="150" alt="gif cena">
+        `;
+      } else if (cap === 2) {
+        conteudo.innerHTML = `
+          <h2>Capítulo 2</h2>
+          <p>Agora a história esquenta!</p>
+          <p>Nossos heróis enfrentam desafios perigosos.</p>
+          <img src="https://media.giphy.com/media/3o7TKtnuHOHHUjR38Y/giphy.gif" width="150" alt="gif capa 2">
+        `;
+      } else if (cap === 3) {
+        conteudo.innerHTML = `
+          <h2>Capítulo 3</h2>
+          <p>O clímax da aventura chegou!</p>
+          <p>Quem sobreviverá para contar a história?</p>
+          <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExeXNlN25pcmFqMXJmMDI5eGZ0cXBpcWRxcTRkMWU3cmd0ZGp6NWgzYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ns8cslLVGhZzBlP26w/giphy.gif" width="150" alt="gif capa 3">
+        `;
+      } else if (cap === 'enredo') {
+        conteudo.innerHTML = `
+          <h2>Enredo</h2>
+          <p>Trote Futurista é uma HQ que mistura aventura e nostalgia dos anos 2000!</p>
+          <p>Exploramos universos coloridos, desafios de amigos com viagens no tempo a cada capítulo.</p>
+          <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExcTNxMGtlZmQ5eTBmaTEyMDNqYWxhejVjOHJ5ZDg4bDV0bnkxZ2VoYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3GmyBW4esV71rNCnzU/giphy.gif" width="150" alt="gif cena">
+        `;
+      } else if (cap === 'quemSomos') {
+        conteudo.innerHTML = `
+          <h2>Quem somos</h2>
+          <p>Somos uma equipe de criadores apaixonados por HQs e animação:</p>
+          <ul>
+        <li><b>Nathaly</b> – Criadora, roteirista e ideias de design</li>
+        <li><b>Letícia</b> – Ilustração e storyboard</li>
+        <li><b>Apolo</b> – Design de personagens e sugestões de enredo</li>
+        <li><b>Kauã</b> – Pesquisa de referências e brainstorm de ideias</li>
+        <li><b>Carlos</b> – Edição, revisão e apoio criativo geral</li>
+          </ul>
+          <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOWlwcGJobXdjdmdzOWJmZHBsMXgwZnZ2MG1maWh4bGFrYm9ndmE1cyZlcD12MV9naWZzX3NlYXJjaCZjdD1n/f0tufxEr372ZLuA07V/giphy.gif" width="150" alt="gif equipe">
+        `;
+      }
       
-      <fieldset>
-        <legend>Dados Pessoais</legend>
-
-        <label for="nome">Nome completo:</label><br>
-        <input type="text" id="nome" name="nome" required><br><br>
-
-        <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email" required><br><br>
-
-        <label for="nascimento">Data de nascimento:</label><br>
-        <input type="date" id="nascimento" name="nascimento" required><br>
-      </fieldset>
-      <br>
-
-      <fieldset>
-        <legend>Gênero</legend>
-        <input type="radio" id="feminino" name="genero" value="Feminino" required>
-        <label for="feminino">Feminino</label><br>
-
-        <input type="radio" id="masculino" name="genero" value="Masculino">
-        <label for="masculino">Masculino</label><br>
-
-        <input type="radio" id="outro" name="genero" value="Outro">
-        <label for="outro">Outro</label>
-      </fieldset>
-      <br>
-
-      <fieldset>
-        <legend>Interesses</legend>
-        <input type="checkbox" id="html" name="interesses" value="HTML">
-        <label for="html">HTML</label><br>
-
-        <input type="checkbox" id="css" name="interesses" value="CSS">
-        <label for="css">CSS</label><br>
-
-        <input type="checkbox" id="js" name="interesses" value="JavaScript">
-        <label for="js">JavaScript</label><br>
-      </fieldset>
-      <br>
-
-      <fieldset>
-        <legend>Curso</legend>
-        <label for="curso">Selecione o curso:</label><br>
-        <select id="curso" name="curso" required>
-          <option value="">-- Escolha uma opção --</option>
-          <option value="informatica">Informática</option>
-          <option value="moda">Moda</option>
-          <option value="administracao">Administração</option>
-        </select>
-      </fieldset>
-      <br>
-
-      <fieldset>
-        <legend>Mensagem</legend>
-        <textarea id="mensagem" name="mensagem" rows="4" cols="40" placeholder="Digite sua mensagem aqui..."></textarea>
-      </fieldset>
-      <br>
-
-      <button type="submit">Enviar</button>
-      <button type="reset">Limpar</button>
-    </form>
+    }
+  </script>
+</body>
+</html>
   </main>
 </body>
+
 </html>
